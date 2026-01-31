@@ -2,9 +2,9 @@ import { supabase } from "../supabaseClient.js";
 
 export const addedTrip = async (req, res) => {
   try {
-    const { full_name, email, phone } = req.body;
+    const {customer_id, vehicle_id, start_date,end_date, location, distance_km, passengers,created_at } = req.body;
 
-    if (!full_name || !email || !phone) {
+    if (!customer_id|| !vehical_id|| !start_date ||!end_date ||!location ||!distance_km ||!passengers ||!created_at) {
       return res.status(400).json({ error: "All fields required" });
     }
 

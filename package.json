@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "server":"nodemon ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AnshikaKhanngwal/Main-Evaluation4.git"
   },
+  "type":"module",
   "keywords": [],
   "author": "",
   "license": "ISC",

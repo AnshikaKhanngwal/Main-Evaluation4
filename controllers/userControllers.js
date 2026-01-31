@@ -2,15 +2,15 @@ import { supabase } from "../supabaseClient.js";
 
 export const registerUser = async (req, res) => {
   try {
-    const { full_name, email, phone } = req.body;
+    const { name, email, role, created_at } = req.body;
 
-    if (!full_name || !email || !phone) {
+    if (!name || !email || !role || !created_at) {
       return res.status(400).json({ error: "All fields required" });
     }
 
     const { data, error } = await supabase
       .from("user")
-      .insert([{ full_name, email, phone }])
+      .insert([{ name, email, role, created_at}])
       .select();
 
     if (error) return res.status(400).json({ error: error.message });
